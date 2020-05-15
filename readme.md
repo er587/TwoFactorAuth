@@ -114,6 +114,12 @@ The user database must be protected against remote access. To achieve this, you 
 or
 - **After** the installation: prevent remote access to the db/ directory using a web server specific directive (.htaccess with Apache, or location specific 'deny all;' with Nginx)
 
+AND: 
+sudo mkdir /var/www/html/twofactorauth/temp
+sudo mkdir /var/www/html/twofactorauth/db
+
+sudo chown -R www-data:www-data /var/www/html/twofactorauth/temp
+sudo chown -R www-data:www-data /var/www/html/twofactorauth/db
 
 [OPTIONNAL] NGINX auth_request integration
 ---------------------
@@ -157,6 +163,19 @@ You'll have to edit your Nginx configuration file. Assuming the TwoFactorAuth ap
 				include fastcgi.conf;
 		}
     }
+
+
+
+
+
+
+
+[OPTIONNAL] NGINX integration for ELK with logging
+---------------------
+
+
+
+
 
 Credits
 --------
